@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Ship to address:</strong>
+  <%= @order.ship_to_address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @order.phone_number %>
+</p>
+
+<p>
+  <strong>Ship to name:</strong>
+  <%= @order.ship_to_name %>
+</p>
+
+<p>
+  <strong>Ship to phone number:</strong>
+  <%= @order.ship_to_phone_number %>
+</p>
+
+<p>
+
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Customer ip:</strong>
+  <%= @order.customer_ip %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
+
+<hr>
+<h2>訂購商品清單</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+<%= @order.order_items.each do |item| %>
+  <tr>
+    <td><%= item.product.name %></td>
+    <td><%= item.product.price %></td>
+    <td><%= item.quantity %></td>
+  </tr>
+<% end %>
+</table>
+
+<h4>Total amount :<%= @order.total %> </h4>
+
+
+

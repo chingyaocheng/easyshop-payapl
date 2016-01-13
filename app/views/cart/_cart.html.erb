@@ -1,0 +1,41 @@
+<h3>Your shopping cart<span><p><%= link_to "清空購物車", clear_path  %></p></span></h3>
+
+<% if @cart.cart_items.count > 0 %>
+  <table class="table">
+
+    <thead>
+      <tr>
+        <td>Image</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Total</td>
+        <td></td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= @cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td><%= image_tag cart_item.product.image.thumb.url %></td>
+          <td><%= cart_item.product.name %></td>
+          <td><%= cart_item.product.price %></td>
+          <td><%= cart_item.quantity.to_i %></td>
+          <td><%= number_to_currency( cart_item.total_price ) %> </td>
+          <td><%= link_to 'Delete', remove_path(:id => cart_item.product.id)  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
+<tr>
+  <td colspan="2">Total amount</td>
+  <td><%= number_to_currency(@cart.total_amount) %></td>
+</tr>
+<% else %>
+  <%= "You have no items in cart!" %>
+<% end %>
+
+<p><%= link_to '結帳去', new_order_path  %></p>
