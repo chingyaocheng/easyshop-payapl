@@ -19,7 +19,7 @@ class Order < ActiveRecord::Base
   has_many :order_items
   has_many :products, :through => :order_items
 
-   validates :name, :ship_to_address, :phone_number ,:ship_to_name ,:ship_to_phone_number, presence: true
+  validates_presence_of :name, :ship_to_address, :phone_number ,:ship_to_name ,:ship_to_phone_number
 
   STATUS = [
     ["New", :new],

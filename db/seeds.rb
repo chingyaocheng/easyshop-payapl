@@ -7,9 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-if
 puts "Genarating default categories"
-sleep 5
+sleep 3
 Category.create(:name => 'Pasta')
 Category.create(:name => 'Rice')
 Category.create(:name => 'Soda')

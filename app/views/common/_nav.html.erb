@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">EasyShop <span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+      <p class="navbar-text">Shopping cart implementation with Paypal</p>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Products', products_path  %></li>
+        <li><%= link_to 'Orders', orders_path %></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+          <button class="btn btn-default navbar-btn collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</button>
+      </ul>
+      <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
+        <div class="well">
+        <%= @categories.each do |c| %>
+          <%= link_to c.name, category_path(c) %> |
+        <% end %>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
