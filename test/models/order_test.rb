@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  ship_to_address      :string
+#  phone_number         :string
+#  ship_to_name         :string
+#  ship_to_phone_number :string
+#  status               :string
+#  customer_ip          :string
+#  email                :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
 require 'test_helper'
 
 class OrderTest < ActiveSupport::TestCase

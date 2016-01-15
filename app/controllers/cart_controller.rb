@@ -6,7 +6,7 @@ def add
   @items = @cart.cart_items.where(:product_id => params[:id])
 
     if @items.size < 1
-      ci = @cart.cart_items.create( :product_id => params[:id], :quantity => 1)
+      ci = @cart.cart_items.create( :product_id => params[:id], :quantity => params[:quantity].to_i)
     else
       # ci = @items.first
       # ci.update_attribute(:quantity => ci.quantity =+ 1)

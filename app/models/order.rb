@@ -1,6 +1,25 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  ship_to_address      :string
+#  phone_number         :string
+#  ship_to_name         :string
+#  ship_to_phone_number :string
+#  status               :string
+#  customer_ip          :string
+#  email                :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
 class Order < ActiveRecord::Base
   has_many :order_items
   has_many :products, :through => :order_items
+
+   validates :name, :ship_to_address, :phone_number ,:ship_to_name ,:ship_to_phone_number, presence: true
 
   STATUS = [
     ["New", :new],
