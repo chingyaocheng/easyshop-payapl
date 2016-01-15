@@ -17,14 +17,12 @@
         <li><%= link_to 'Orders', orders_path %></li>
         <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
-          <button class="btn btn-default navbar-btn collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</button>
+        <li><button class="btn btn-default navbar-btn collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</button></li>
       </ul>
       <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
-        <div class="well">
         <%= @categories.each do |c| %>
           <%= link_to c.name, category_path(c) %> |
         <% end %>
-        </div>
       </ul>
     </div>
   </div>

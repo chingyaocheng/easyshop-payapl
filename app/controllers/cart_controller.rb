@@ -8,8 +8,9 @@ def add
     if @items.size < 1
       ci = @cart.cart_items.create( :product_id => params[:id], :quantity => params[:quantity].to_i)
     else
-      # ci = @items.first
-      # ci.update_attribute(:quantity => ci.quantity =+ 1)
+      ci = @items.first
+      ci.quantity = ci.quantity + params[:quantity].to_i
+      ci.update_attribute(:quantity , ci.quantity)
     end
   ci
    redirect_to :back, notice: 'Items was successfully added.'
