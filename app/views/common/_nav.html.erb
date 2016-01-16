@@ -1,5 +1,4 @@
 <nav class="navbar navbar-default">
-  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -13,17 +12,17 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Products', products_path  %></li>
-        <li><%= link_to 'Orders', orders_path %></li>
+         <li><button type="button" class="btn btn-default navbar-btn collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories <span class="caret"></span></button></li>
+         <li><%= link_to 'Products', products_path  %></li>
+         <li><%= link_to 'Orders', orders_path %></li>
         <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
-        <li><button class="btn btn-default navbar-btn collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</button></li>
       </ul>
+
       <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
         <%= @categories.each do |c| %>
           <%= link_to c.name, category_path(c) %> |
         <% end %>
       </ul>
     </div>
-  </div>
 </nav>
