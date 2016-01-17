@@ -1,4 +1,4 @@
-## easyshop-payapl
+## Easyshop-Payapl
 Simple store implementation with Paypal
 
 ## Code Example
