@@ -14,6 +14,8 @@ gem 'puma'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
+gem "figaro"
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'annotate'
 gem 'rails_12factor'
