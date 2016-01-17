@@ -13,7 +13,7 @@ def add
       ci.update_attribute(:quantity , ci.quantity)
     end
   ci
-   redirect_to :back, notice: 'Items was successfully added.'
+   redirect_to :back, notice: '商品已放入購物車 Items was successfully added.'
 end
 
 
@@ -24,13 +24,13 @@ def remove
     @cart.cart_items.delete(ci.id)
   end
 
-  redirect_to :back, notice: 'Items was successfully removed.'
+  redirect_to :back, notice: '已移除商品 Items was successfully removed.'
 end
 
 
 def destroy
   @cart.cart_items.destroy_all
-  redirect_to :back, notice: 'Items was successfully cleared.'
+  redirect_to :back, notice: '已清空購物車 Items was successfully cleared.'
 end
 
 
